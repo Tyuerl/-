@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BUYSELL</title>
+</head>
+<body>
+<tr th:each="product: ${seller.products}">
+    <td th:text="${product.id}" />
+    <td th:text="${product.name}" />
+    <img th:src="${'data:image/jpeg;charset=utf-8;base64,' + images.get(product.id)}" alt="">
+</tr>
+<hr>
+<h3>Создать новый товар</h3>
+<form action="/addProduct" method="post" enctype="multipart/form-data">
+    Название объявления: <input type="text" name="name"/><br><br>
+    Описание объявления: <input type="text" name="description"/><br><br>
+    Цена: <input type="number" name="price"/><br><br>
+    Кол-во: <input type="number" name="count"/><br><br>
+    Первая фотография: <input type="file" name="file1"/><br><br>
+    Вторая фотография: <input type="file" name="file2"/><br><br>
+    Третья фотография: <input type="file" name="file3"/><br><br>
+    <input type="submit" value="Добавить товар"/>
+</form>
+</body>
+</html>

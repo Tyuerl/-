@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/auth/reg}" th:object="${seller}">
+    <label> Name : <input type="text" th:field="*{name}" name="name"/> </label></div>
+    <label> Description : <input type="text" th:field="*{description}" name="money"/> </label></div>
+    <label> Password: <input type="password" th:field="*{password}" name="password"/> </label></div>
+    <input type="submit" value="Sign Up"/>
+</form>
+
+</body>
+</html>

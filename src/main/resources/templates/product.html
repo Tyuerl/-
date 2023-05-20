@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+<td th:text="${product.id}" />
+<td th:text="${product.name}" />
+<td th:text="${product.count}" />
+<td th:text="${product.description}" />
+<tr th:each="image: ${images}">
+    <img th:src="${'data:image/jpeg;charset=utf-8;base64,' + image}" alt="">
+</tr>
+</body>
+</html>
