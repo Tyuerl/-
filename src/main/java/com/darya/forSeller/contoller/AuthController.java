@@ -1,7 +1,7 @@
-package com.darya.marketplace.contoller;
+package com.darya.forSeller.contoller;
 
-import com.darya.marketplace.entity.Seller;
-import com.darya.marketplace.service.SellerService;
+import com.darya.forSeller.entity.Seller;
+import com.darya.forSeller.service.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

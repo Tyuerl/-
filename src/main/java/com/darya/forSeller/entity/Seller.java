@@ -1,6 +1,6 @@
-package com.darya.marketplace.entity;
+package com.darya.forSeller.entity;
 
-import com.darya.marketplace.entity.enums.ERole;
+import com.darya.forSeller.entity.enums.ERole;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -15,31 +15,31 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "client")
+@Table(name = "seller")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Client {
+public class Seller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    //@NotEmpty(message = "Name should not be empty")
+    @NotEmpty(message = "Name should not be empty")
     @Column(name = "name")
     private String name;
-    //@NotEmpty(message = "Password should not be empty")
-    //@Size(min = 8, message = "Password should be bigger 8 characters")
+    @NotEmpty(message = "Password should not be empty")
+    @Size(min = 8, message = "Password should be bigger 8 characters")
     @Column(name = "password")
     private String password;
-    @Column(name = "money")
-    private double money;
+    @Column(name = "description")
+    private String description;
 
     @ElementCollection(targetClass = ERole.class)
-    @CollectionTable(name = "client_role",
-            joinColumns = @JoinColumn(name = "client_id"))
+    @CollectionTable(name = "seller_role",
+            joinColumns = @JoinColumn(name = "seller_id"))
     private Set<ERole> roles = new HashSet<>();
 
-    @OneToMany(mappedBy = "client")
-    private List<Basket> baskets;
+    @OneToMany(mappedBy = "seller")
+    private List<Product> products;
 }

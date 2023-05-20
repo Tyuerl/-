@@ -1,4 +1,4 @@
-package com.darya.marketplace.entity;
+package com.darya.forSeller.entity;
 
 import javax.persistence.*;
 import lombok.AllArgsConstructor;

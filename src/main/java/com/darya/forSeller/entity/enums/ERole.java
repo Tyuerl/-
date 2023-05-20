@@ -1,4 +1,4 @@
-package com.darya.marketplace.entity.enums;
+package com.darya.forSeller.entity.enums;
 
 public enum ERole {
     ROLE_USER,

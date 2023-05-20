@@ -1,7 +1,6 @@
-package com.darya.marketplace.security;
+package com.darya.forSeller.security;
 
-import com.darya.marketplace.entity.Client;
-import com.darya.marketplace.entity.Seller;
+import com.darya.forSeller.entity.Seller;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

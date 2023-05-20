@@ -1,6 +1,6 @@
-package com.darya.marketplace.repository;
+package com.darya.forSeller.repository;
 
-import com.darya.marketplace.entity.Basket;
+import com.darya.forSeller.entity.Basket;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

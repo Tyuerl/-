@@ -1,8 +1,8 @@
-package com.darya.marketplace.service;
+package com.darya.forSeller.service;
 
-import com.darya.marketplace.entity.Seller;
-import com.darya.marketplace.entity.enums.ERole;
-import com.darya.marketplace.repository.SellerRepository;
+import com.darya.forSeller.entity.Seller;
+import com.darya.forSeller.entity.enums.ERole;
+import com.darya.forSeller.repository.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

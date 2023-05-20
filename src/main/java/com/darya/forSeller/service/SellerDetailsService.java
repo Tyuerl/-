@@ -1,8 +1,7 @@
-package com.darya.marketplace.service;
+package com.darya.forSeller.service;
 
-import com.darya.marketplace.repository.ClientRepository;
-import com.darya.marketplace.repository.SellerRepository;
-import com.darya.marketplace.security.SellerDetails;
+import com.darya.forSeller.repository.SellerRepository;
+import com.darya.forSeller.security.SellerDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

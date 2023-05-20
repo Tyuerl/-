@@ -1,16 +1,15 @@
-package com.darya.marketplace.service;
+package com.darya.forSeller.service;
 
-import com.darya.marketplace.entity.ImageProduct;
-import com.darya.marketplace.entity.Product;
-import com.darya.marketplace.entity.Seller;
-import com.darya.marketplace.repository.ImageRepository;
-import com.darya.marketplace.repository.ProductRepository;
+import com.darya.forSeller.entity.ImageProduct;
+import com.darya.forSeller.entity.Product;
+import com.darya.forSeller.entity.Seller;
+import com.darya.forSeller.repository.ImageRepository;
+import com.darya.forSeller.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 @Service
 public class ProductService {

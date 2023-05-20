@@ -1,6 +1,6 @@
-package com.darya.marketplace.config;
+package com.darya.forSeller.config;
 
-import com.darya.marketplace.service.SellerDetailsService;
+import com.darya.forSeller.service.SellerDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

@@ -1,11 +1,11 @@
-package com.darya.marketplace.contoller;
+package com.darya.forSeller.contoller;
 
-import com.darya.marketplace.entity.ImageProduct;
-import com.darya.marketplace.entity.Product;
-import com.darya.marketplace.entity.Seller;
-import com.darya.marketplace.repository.*;
-import com.darya.marketplace.security.SellerDetails;
-import com.darya.marketplace.service.ProductService;
+import com.darya.forSeller.entity.ImageProduct;
+import com.darya.forSeller.entity.Product;
+import com.darya.forSeller.entity.Seller;
+import com.darya.forSeller.repository.*;
+import com.darya.forSeller.security.SellerDetails;
+import com.darya.forSeller.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
