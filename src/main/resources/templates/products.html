@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+
+<style>
+
+    html {
+        font-size: 18px;
+    }
+    body {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #160B46;
+        background-color: #fff;
+        min-width: 320px;
+        padding: 0 30px;
+    }
+    main{
+        width: 100%;
+        padding-top: 70px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    section {
+        padding: 50px 0;
+    }
+    a {
+        color: #160B46;
+    }
+    a:hover {
+        color: #6D4CFB;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 14px;
+        color:#160B46;
+        font-weight: 500;
+        padding-left: 50px;
+    }
+    .navbar-light .navbar-nav .nav-link:hover{
+        color:#6D4CFB;
+    }
+    .navbar-nav . {
+        right: 0;
+        left: auto;
+        padding-left: 20px;
+    }
+    .top-menu li a::after {
+        content: '';
+        display: block;
+        width: 100%;
+        background-color: #6D4CFB;
+        color: #6D4CFB;
+        height: 1px;
+        transition: all .3s;
+        transform: scale(0);
+    }
+    .top-menu li a:hover::after {
+        transform: scale(1);
+    }
+    a:hover{
+        color: #6D4CFB;
+    }
+    .top-menu li a{
+        color: red;
+    }
+    .modal-body img {
+        max-width: 100px;
+    }
+    .my-carousel {
+        padding: 0;
+    }
+    .my-carousel .carousel-item {
+        display: flex;
+        height: 500px;
+        min-height: 300px;
+        position: relative;
+    }
+    .my-carousel .carousel-item img {
+        object-fit: cover;
+    }
+    .product-card {
+        background-color: #FAFAFA;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+        transition: all .3s;
+    }
+    .product-card:hover {
+        box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
+    }
+    .product-thumb a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        padding: 20px;
+    }
+    .product-thumb img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .product-details {
+        padding: 20px;
+    }
+    .product-details h4 a {
+        font-weight: 500;
+        display: block;
+        height: 60px;
+        overflow: hidden;
+        text-decoration: none;
+    }
+    .product-details p {
+        font-size: 15px;
+        margin-bottom: 20px;
+        color: #6D4CFB;
+        height: 44px;
+        overflow: hidden;
+    }
+    .product-bottom-details {
+        overflow: hidden;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+    .product-price {
+        font-size: 18px;
+        color: #160B46;
+        font-weight: 600;
+    }
+    .product-price small {
+        color: #160B46;
+        font-weight: 400;
+        text-decoration: line-through;
+        margin-right: 5px;
+    }
+    .product-links a {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+    h2{
+        padding-left: 100px;
+        padding-top: 60px;
+        font-size: 20px;
+        font-weight: 800;
+        color: #160B46;
+    }
+    .navbar-brand img{
+        height: 30px;
+    }
+    .carousel-caption h5{
+        font-size: 16px;
+        letter-spacing: 2px;
+        margin-top: 25px;
+        font-weight: 500;
+    }
+    .carousel-caption p {
+        width: 80%;
+        margin: auto;
+        font-size: 30px;
+        line-height: 1.9;
+        font-weight: bold;
+    }
+    .carousel-caption{
+        position: absolute;
+        top: 25%;
+    }
+    .btn-indigo {
+        background-color: #FAFAFA;
+        border-color: #FAFAFA;
+        font-size: 13px;
+    }
+    .btn-indigo:hover, btn-indigo:after, btn-indigohover, btn-indigo:visited, btn-indigo:active{
+        background-color: #6D4CFB;
+        border-color: #6D4CFB;
+        color: white;
+    }
+
+    section{
+        padding: 20px 0;
+    }
+    h4{
+        font-size: 15px;
+        color: #160B46;
+    }
+    .product-price{
+        font-size: 15px;
+        padding-right: 10px;
+    }
+    .product-links{
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .navbar{
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+    .header{
+        width: 100%;
+        background: #fff;
+        padding: 10px 0;
+        z-index: 100;
+        -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+    @media (max-width: 1000px) {
+        .carousel-caption h5{
+            font-size: 14px;
+        }
+        .carousel-caption p {
+            font-size: 25px;
+        }
+        .my-carousel .carousel-item {
+            height: 400px;
+        }
+        .btn-indigo{
+            font-size: 12px;
+        }
+    }
+    @media (max-width: 850px) {
+        .carousel-caption h5{
+            font-size: 12px;
+        }
+        .carousel-caption p {
+            font-size: 20px;
+        }
+        .btn-indigo{
+            font-size: 11px;
+        }
+        .my-carousel .carousel-item {
+            height: 300px;
+        }
+    }
+
+</style>
+
+<body>
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}">MyAppleStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-between"  id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/products}">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/delivery}">Доставка и оплата</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/company}">О компании</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/basket">Корзина</a>
+                    </li>
+                   <li class="nav-item">
+                        <a  class="nav-link" data-bs-toggle="dropdown" href="/logout">Выйти</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="container-fluid my-carousel">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-interval="5000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://psv4.userapi.com/c235031/u229204806/docs/d23/8b4896386c34/Group_1645.png?extra=16r5VhDaavKWdKGrANJv0X7zWqXDy-U7MwaFGzOI4accdEZqpJco1qgU9cgC1RYCuk-A6p-DUzV1WpkpdUd9uBTA-UuROHo11LOt9UbkGOe7UmNPUs9z766dH9sR7XIhS_hlemX9o2OeBv1hzg0JaCfqUcY" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>MacBook Pro M2 2023</h5>
+                        <p>Утонченно. Мощно. Безопасно.</p>
+                        <p><a th:href="@{/info}" class="btn btn-indigo mt-3">Подробнее</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Каталог</h2>
+            <section class="main-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6 mb-3" th:each="product: ${products}">
+                            <div class="product-card">
+                                <div class="product-thumb">
+                                    <a th:href="${ '/product/' + product.id}"><img src="https://sun9-22.userapi.com/impg/MAGZ6eu9-Pk_hqLsXnCwM6NMTmslYdnWk_SJ3Q/YdWa2F3_eX8.jpg?size=1280x1280&quality=95&sign=5fb76d277b95f6e96d37be7ff9fb3d27&type=album" alt="">
+                                    </a>
+                                </div>
+                                <div class="product-details">
+                                    <h4><a th:text="${product.name}" th:href="${ '/product/' + product.id}">Айфон 15</a></h4>
+                                    <div class="product-bottom-details d-flex">
+                                        <div class="product-price" th:text="${product.price}">
+
+                                        </div>
+                                        <div class="product-links">рублей
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+</main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+</html>

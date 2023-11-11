@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="auth.css">
+    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+    <title>Login & Registration Form</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+        }
+        .container{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left_side{
+            width: 40%;
+
+            display: flex;
+            flex-direction: column;
+        }
+        .left_img{
+            width: 45vw;
+
+        }
+        .container .forms {
+            width: 60%;
+
+            display: flex;
+
+            align-items: center;
+            transition: height 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container .form{
+            padding: 40px;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+
+
+        }
+
+        .container .signup{
+            opacity: 1;
+            transition: opacity 0.09s ease;
+        }
+        .container.active .signup{
+            opacity: 1;
+            transition: opacity 0.2s ease;
+
+        }
+        label{
+            background: #F5F4F7;
+        }
+        .container.active .forms{
+            height: 500px;
+        }
+        .container .form .title{
+            position: relative;
+            font-size: 27px;
+            font-width: 600;
+            color: #160B46;
+            font-weight: 600;
+        }
+
+        .form .input-field{
+            margin-top: 30px;
+            position: relative;
+            height: 50px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            border-radius: 20px;
+
+        }
+        .input-field input{
+
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            padding: 0 50px;
+            border-radius: 10px;
+            outline: none;
+            border: black;
+            font-size: 16px;
+            border-bottom: 2px solid #F5F4F7;
+            border-top: 2px solid transparent;
+            transition: all 0.2s ease;
+            background: #F5F4F7;
+        }
+
+        .input-field i {
+            position: absolute;
+            top: 100%;
+            transform: translateY(-50%);
+            color: #A8A4B0;
+            font-size: 23px;
+            transition: all 0.2s ease;
+
+        }
+        .input-field input:is(:focus, :valid) ~ i{
+            color: dodgerblue;
+        }
+        .input-field i.icon{
+            left: 15px;
+        }
+        .input-field i.uil-coins{
+            left: 15px;
+        }
+        .input-field i.showHidePw{
+            right: 15px;
+            cursor: pointer;
+
+        }
+
+
+        .form .button input{
+            border: none;
+            color: #fff;
+            font-size: 17px;
+            font-width: 500;
+            letter-spacing: 1px;
+            border-radius: 6px;
+            background-color: #6D4CFB;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form .button{
+            margin-top: 60px;
+        }
+
+        .button input:hover{
+            background-color: #5935f1;
+        }
+        .form .login-signup{
+            margin-top: 30px;
+            text-align: center;
+        }
+        .form .text {
+            color: #A8A4B0;
+            font-size: 16px;
+        }
+
+
+        .form a.text{
+            text-decoration: none;
+            color: #1a0b60;
+            font-weight: 400;
+        }
+        .form a:hover{
+            text-decoration: underline;
+        }
+        .left_side{
+            display: flex;
+
+            height: 100vw;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+<div class="container">
+    <div class="left_side">
+        <img class="left_img" src="https://psv4.userapi.com/c235131/u229204806/docs/d43/c7285caee86c/Add_to_Cart-bro.png?extra=mAcXRZvw3ErFvJPUvkpvTTDCUHouuVrRMBWfU23CdkoRt6gZ9wEsX7XwnCLwie2JUL8vtRNo-zGUvW0e9eIceF4g-vSxzeIBJ26UUA5zLYlO_LNlQasTTXf1jcwdOe95TPsGBY8COaj_y7OELCWfkiSBzdA">
+    </div>
+    <div class="forms">
+        <div class="form signup">
+
+            <span class="title">Регистрация</span>
+            <form  th:method="POST" th:action="@{/auth/reg}" th:object="${client}">
+                <div class="input-field">
+                    <label> <input type="text" th:field="*{name}" name="name" placeholder="Придумайте логин" /> </label>
+                    <i class="uil uil-envelope icon"></i>
+                </div>
+                <div class="input-field">
+                    <label><input type="text" th:field="*{money}" name="money" placeholder="Введите количество денег" /></label>
+                    <i class="uil uil-coins"></i>
+                </div>
+                <div class="input-field">
+                    <label><input type="password" class="password" th:field="*{password}" name="password" placeholder="Придумайте пароль" /></label>
+                    <i class="uil uil-lock icon"></i>
+                    <i class="uil uil-eye-slash showHidePw"></i>
+                </div>
+                <div class="input-field button">
+                    <input type="submit" value="Зарегистрироваться" />
+                </div>
+
+            </form>
+            <div class="login-signup">
+                <span class="text">Уже есть аккаунт?</span>
+                <a href="/auth/login" class="text login-link">Войдите</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const
+        pwShowHide = document.querySelectorAll(".showHidePw"),
+        pwFields = document.querySelectorAll(".password");
+
+    pwShowHide.forEach(eyeIcon => {
+        eyeIcon.addEventListener("click", ()=> {
+            pwFields.forEach(pwField =>{
+                if (pwField.type ==="password") {
+                    pwField.type = "text";
+                    pwShowHide.forEach(icon=>{
+                        icon.classList.replace("uil-eye-slash", "uil-eye")
+                    })
+                }
+                else {
+                    pwField.type = "password";
+                    pwShowHide.forEach(icon=> {
+                        icon.classList.replace("uil-eye", "uil-eye-slash");
+                    })
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

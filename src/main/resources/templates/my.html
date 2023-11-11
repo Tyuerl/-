@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelancer portfolio</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
+
+  /*
+  font-family: 'DM Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  */
+
+  /* * {
+      border: 1px solid red;
+  } */
+
+  :root {
+    --blackpure: #000;
+    --black: #171718;
+    --black-border: #26292D;
+    --white: #fff;
+    --purple: #5C62EC;
+
+    --text-color: var(--black);
+
+    --dark-bg: var(--black);
+    --dark-border: var(--black-border);
+    --header-text: var(--white);
+    --accent: var(--purple);
+
+    /* Light mode */
+    --page-bg: var(--white);
+    --text-color: var(--black);
+
+    --title-1: var(--accent);
+
+    --project-card-bg: var(--white);
+    --project-card-text: var(--black);
+    --box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+  }
+
+  .dark {
+    /* Dark mode */
+    --page-bg: #252526;
+    --text-color: var(--white);
+
+    --title-1: var(--white);
+
+    --project-card-bg: var(--black);
+    --project-card-text: var(--white);
+    --box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
+  }
+  nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  html, body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: -0.5px;
+
+    /* Light mode */
+    background-color: var(--page-bg);
+    color: var(--text-color);
+  }
+
+  /* General */
+
+  .container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1200px;
+  }
+
+  .none {
+    display: none !important;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .title-1 {
+    margin-bottom: 60px;
+
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--title-1);
+    text-align: center;
+  }
+
+  .title-2 {
+    margin-bottom: 20px;
+
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  /* Nav */
+
+  .nav {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--dark-border);
+    background-color: var(--dark-bg);
+    color: var(--header-text);
+    letter-spacing: normal;
+    width: 100%;
+  }
+  nav.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+  .nav-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 30px;
+    row-gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    margin-right: auto;
+    color: var(--header-text);
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .logo strong {
+    font-weight: 700;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    align-items: center;
+    column-gap: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nav-list__link {
+    color: var(--header-text);
+    transition: opacity 0.2s ease-in;
+  }
+
+  .nav-list__link:hover {
+    opacity: 0.8;
+  }
+
+  .nav-list__link--active {
+    position: relative;
+  }
+
+  .nav-list__link--active::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 100%;
+
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--accent);
+  }
+
+  /* Dark mode btn */
+
+  .dark-mode-btn {
+    order: 9;
+
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    width: 51px;
+    height: 26px;
+    padding: 5px;
+
+    border-radius: 50px;
+    background-color: #272727;
+  }
+
+  .dark-mode-btn::before {
+    content: "";
+
+    position: absolute;
+    top: 1px;
+    left: 1px;
+
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+    background-color: var(--white);
+
+    transition: left 0.2s ease-in;
+  }
+
+  .dark-mode-btn--active::before {
+    left: 26px;
+  }
+
+  .dark-mode-btn__icon {
+    position: relative;
+    z-index: 9;
+  }
+
+  /* Header */
+
+  .header {
+    padding: 60px 0 20px 0;
+    min-height: 695px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center center;
+
+    color: black;
+    text-align: center;
+  }
+
+  .header__wrapper {
+    padding: 0 15px;
+    max-width: 660px;
+    flex-direction: column;
+  }
+
+  .header__title {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .header__title strong {
+    font-size: 60px;
+    font-weight: 700;
+  }
+
+  .header__title em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .header__text {
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 1.333;
+  }
+
+  .header__text p + p{
+    margin-top: 0.5em;
+  }
+
+  /* Btn */
+
+  .btn {
+    display: inline-block;
+    height: 48px;
+    padding: 12px 28px;
+
+    border-radius: 5px;
+    background-color: var(--accent);
+    color: var(--white);
+    letter-spacing: 0.15px;
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: opacity 0.2s ease-in;
+  }
+
+  .btn:hover {
+    opacity: 0.8;
+  }
+
+  .btn:active {
+    position: relative;
+    top: 1px;
+  }
+
+  /* Btn outline */
+
+  .btn-outline {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+
+    height: 48px;
+    padding: 12px 20px;
+
+    border-radius: 5px;
+    border: 1px solid var(--blackpure);
+    background-color: var(--white);
+    color: var(--blackpure);
+
+    transition: opacity 0.2s ease-in;
+  }
+
+  .btn-outline:hover {
+    opacity: 0.8;
+  }
+
+  .btn-outline:active {
+    position: relative;
+    top: 1px;
+  }
+
+  /* Projects  */
+
+  .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+
+  .project {
+    max-width: 370px;
+    background-color: var(--project-card-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+  }
+
+  .project__img {
+    border-radius: 10px;
+  }
+
+  .project__title {
+    padding: 15px 20px 25px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.3;
+    color: var(--project-card-text);
+  }
+
+  /* Project details */
+
+  .project-details {
+    margin: 0 auto;
+    max-width: 865px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .project-details__cover {
+    max-width: 100%;
+    margin-bottom: 40px;
+
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+  .project-details__desc {
+    margin-bottom: 30px;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  /* Content list */
+
+  .content-list {
+    margin: 0 auto;
+    max-width: 570px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+    text-align: center;
+  }
+
+  .content-list a {
+    color: var(--accent);
+  }
+
+  .content-list__item {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .content-list__item p + p {
+    margin-top: 0.5em;
+  }
+
+  /* Footer */
+
+  .footer {
+    margin-top: auto;
+    padding: 60px 0 50px;
+    background-color: var(--dark-bg);
+    color: var(--header-text);
+  }
+
+  .footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 27px;
+  }
+
+  .social {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+  }
+
+  .copyright {
+    font-size: 16px;
+  }
+
+  .copyright p + p {
+    margin-top: 0.5em;
+  }
+  /* Reset and base styles  */
+  * {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  :focus,
+  :active {
+    /*outline: none;*/
+  }
+
+  a:focus,
+  a:active {
+    /* outline: none;*/
+  }
+
+  /* Links */
+
+  a, a:link, a:visited  {
+    /* color: inherit; */
+    text-decoration: none;
+    /* display: inline-block; */
+  }
+
+  a:hover  {
+    /* color: inherit; */
+    text-decoration: none;
+  }
+
+  /* Common */
+
+  aside, nav, footer, header, section, main {
+    display: block;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  ul, ul li {
+    list-style: none;
+  }
+
+  img {
+    vertical-align: top;
+  }
+
+  img, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  /* Form */
+
+  input, textarea, button, select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+  }
+
+  input::-ms-clear {
+    display: none;
+  }
+
+  button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+  }
+
+  input:focus, input:active,
+  button:focus, button:active {
+    outline: none;
+  }
+
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  legend {
+    display: block;
+  }
+  .left{
+    flex-direction: column;
+    width: 40%
+  }
+  @media (max-width: 620px) {
+
+    /* Header  */
+
+    .header {
+      min-height: unset;
+    }
+
+    .header__title {
+      font-size: 30px;
+    }
+
+    .header__title strong {
+      font-size: 40px;
+    }
+
+    /* Nav */
+
+    .nav-row {
+      justify-content: space-between;
+    }
+
+    .dark-mode-btn {
+      order: 0;
+    }
+
+    /* General */
+
+    .section {
+      padding: 40px 0;
+    }
+
+    .title-1 {
+      margin-bottom: 30px;
+      font-size: 40px;
+    }
+
+    .title-2 {
+      margin-bottom: 10px;
+      font-size: 30px;
+    }
+
+    /* Projects */
+
+    .project__title {
+      font-size: 22px;
+    }
+
+    /* Project page */
+
+    .project-details__desc {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    /* Content List */
+
+    .content-list {
+      row-gap: 20px;
+    }
+
+    .content-list__item {
+      font-size: 16px;
+    }
+
+    /* Footer */
+
+    .footer {
+      padding: 40px 0 30px;
+    }
+
+    .footer__wrapper {
+      row-gap: 20px;
+    }
+
+    /* Social */
+
+    .social {
+      column-gap: 20px;
+    }
+
+    .social__item {
+      width: 28px;
+    }
+
+  }
+</style>
+<body>
+<nav class="nav">
+  <div class="container">
+    <div class="nav-row">
+      <a href="./index.html" class="logo"><strong>MyAppleStore</strong></a>
+
+
+
+      <ul class="nav-list">
+        <li class="nav-list__item"><a href="./index.html" class="nav-list__link nav-list__link--active">Каталог</a></li>
+        <li class="nav-list__item"><a href="./skills.html" class="nav-list__link">Доставка и оплата</a></li>
+        <li class="nav-list__item"><a href="./contacts.html" class="nav-list__link">О компании</a></li>
+        <li class="nav-list__out"><a href="./contacts.html" class="nav-list__out">Выйти</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="left">
+    <img src="https://psv4.userapi.com/c235031/u229204806/docs/d36/ef6a692aedfb/In_no_time-pana.png?extra=5iHVpmj7vZmO_O7DRfMBz7yqdlIMonoK8T3mbeFigGFiwa6RUSPNRtYuL951l8_Jj5GcE8NSoOiz3IkxtCE-6H4xuG_mo3aN_ksP2R5dIE8dyNTlAbcoZh7kG4If7D0N1FlI3G9xen2_rwtCiYORH5e3Byg">
+  </div>
+  <div class="header__wrapper">
+    <h1 class="header__title">
+      <strong><em>Apple</em> Marketplace</strong>
+
+    </h1>
+    <div class="header__text">
+      <p>Онлайн площадка для продажи/покупки продукции Apple.</p>
+    </div>
+    <a href="#!" class="btn">Перейти в каталог</a>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <h2 class="title-1">Projects</h2>
+    <ul class="projects">
+      <li class="project">
+        <a href="./project-page.html">
+          <img src="./img/projects/01.jpg" alt="Project img" class="project__img">
+          <h3 class="project__title">Gaming streaming portal</h3>
+        </a>
+      </li>
+      <li class="project">
+        <a href="./project-page.html">
+          <img src="./img/projects/02.jpg" alt="Project img" class="project__img">
+          <h3 class="project__title">Video service</h3>
+        </a>
+      </li>
+      <li class="project">
+        <a href="./project-page.html">
+          <img src="./img/projects/03.jpg" alt="Project img" class="project__img">
+          <h3 class="project__title">Video portal</h3>
+        </a>
+      </li>
+
+      <li class="project">
+        <img src="./img/projects/04.jpg" alt="Project img" class="project__img">
+        <h3 class="project__title">Dating app</h3>
+      </li>
+      <li class="project">
+        <img src="./img/projects/05.jpg" alt="Project img" class="project__img">
+        <h3 class="project__title">Landing</h3>
+      </li>
+      <li class="project">
+        <img src="./img/projects/06.jpg" alt="Project img" class="project__img">
+        <h3 class="project__title">Gaming community</h3>
+      </li>
+
+    </ul>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__wrapper">
+      <ul class="social">
+        <li class="social__item"><a href="#!"><img src="./img/icons/vk.svg" alt="Link"></a></li>
+        <li class="social__item"><a href="#!"><img src="./img/icons/instagram.svg" alt="Link"></a></li>
+        <li class="social__item"><a href="#!"><img src="./img/icons/twitter.svg" alt="Link"></a></li>
+        <li class="social__item"><a href="#!"><img src="./img/icons/gitHub.svg" alt="Link"></a></li>
+        <li class="social__item"><a href="#!"><img src="./img/icons/linkedIn.svg" alt="Link"></a></li>
+      </ul>
+      <div class="copyright">
+        <p>© 2022 frontend-dev.com</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+
+</body>
+</html>
