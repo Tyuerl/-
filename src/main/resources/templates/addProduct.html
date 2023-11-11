@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<style>
+
+  html {
+    font-size: 18px;
+  }
+  .header{
+    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+    z-index: 100;
+    -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+
+  }
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #160B46;
+
+    min-width: 320px;
+
+  }
+  main{
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    height: 700px
+  }
+
+  .seller-link{
+    width: 300px;
+    margin-top: 20px;
+  }
+  section {
+    padding: 50px 0;
+  }
+
+  a {
+    color: #160B46;
+  }
+
+  a:hover {
+    color: #6D4CFB;
+
+  }
+
+  /* Header */
+  .navbar-light .navbar-nav .nav-link {
+    font-size: 14px;
+    color:#160B46;
+    font-weight: 500;
+    padding-left: 50px;
+  }
+  .navbar-light .navbar-nav .nav-link:hover{
+    color:#6D4CFB;
+
+  }
+
+  .navbar-nav . {
+    right: 0;
+    left: auto;
+    padding-left: 20px;
+  }
+
+  .top-menu li a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #6D4CFB;
+    color: #6D4CFB;
+    height: 1px;
+    transition: all .3s;
+    transform: scale(0);
+  }
+
+  .top-menu li a:hover::after {
+    transform: scale(1);
+  }
+  a:hover{
+    color: #6D4CFB;
+  }
+  .top-menu li a{
+    color: red;
+  }
+  .modal-body img {
+    max-width: 100px;
+  }
+  /* Header */
+
+  /* Carousel */
+  .my-carousel {
+
+    border-radius: 20px;
+  }
+
+  .my-carousel .carousel-item {
+    display: flex;
+    height: 40vh;
+
+    min-height: 300px;
+    position: relative;
+  }
+
+  .my-carousel .carousel-item img {
+    object-fit: cover;
+  }
+  /* Carousel */
+
+  /* Product card */
+
+
+  .product-thumb a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    padding: 20px;
+  }
+
+  .product-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+
+  .product-details h4 a {
+    font-weight: 500;
+    display: block;
+    height: 60px;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  .text p {
+    font-size: 46px;
+    padding-top: 20%;
+    color: #7e6ad3;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .product-details p {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #6D4CFB;
+    height: 44px;
+    overflow: hidden;
+  }
+
+  .product-bottom-details {
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+  }
+
+  .product-price {
+    font-size: 18px;
+    color: #160B46;
+    font-weight: 600;
+  }
+
+  .product-price small {
+    color: #160B46;
+    font-weight: 400;
+    text-decoration: line-through;
+    margin-right: 5px;
+  }
+
+  .product-links a {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  h2{
+    padding-left: 100px;
+    padding-top: 60px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #160B46;
+
+
+  }
+  img{
+    height: 500px;
+    width: auto;
+    padding-left: 50px;
+  }
+  .navbar-brand img{
+    height: 30px;
+
+  }
+  .carousel-caption h5{
+    font-size: 16px;
+
+    letter-spacing: 2px;
+    margin-top: 25px;
+    font-weight: 500;
+
+  }
+  .carousel-caption p {
+    width: 80%;
+    margin: auto;
+    font-size: 30px;
+    line-height: 1.9;
+    font-weight: bold;
+  }
+  .carousel-caption{
+    position: absolute;
+
+    top: 30%;
+
+  }
+  .btn-warning {
+    background-color: #FAFAFA;
+    border-color: #FAFAFA;
+    font-size: 13px;
+  }
+  .btn-warning:hover {
+    background-color: #6D4CFB;
+    border-color: #6D4CFB;
+    color: white;
+  }
+  section{
+    padding: 20px 0;
+  }
+  h4{
+    font-size: 15px;
+    color: #160B46;
+  }
+  .product-price{
+    font-size: 15px;
+    padding-right: 10px;
+  }
+  .product-links{
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+
+  }
+  .navbar-brand{
+    color: #6D4CFB;
+  }
+  .st{
+
+  }
+  .text{
+    position: relative;
+    top: 5%;
+
+  }
+  .navbar{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+  .header{
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  .text {
+    text-align: center;
+  }
+  form{
+    padding-top: 20px;
+  }
+  button {
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #6D4CFB;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 200px;
+    height: 40px;
+
+  }
+  .text-partner h5{
+    margin-top: 15px;
+  }
+  .partner{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0dfe3;
+    height: 100%;
+    padding: 4% 0;
+
+
+  }
+  .text-partner{
+    position: relative;
+    top: 30%;
+    padding: 0 30%;
+
+  }
+
+  .block{
+    height: 150px;
+  }
+  @media (min-width: 1200px) and (max-width: 1300px) {
+    .text p {
+      font-size: 40px;
+
+    }
+
+  }
+  @media (min-width: 1050px) and (max-width: 1200px) {
+    .text p {
+      font-size: 32px;
+
+    }
+    .text h5 {
+      font-size: 12px;
+
+    }
+  }
+  @media (min-width: 800px) and (max-width: 1050px) {
+    .text p {
+      font-size: 24px;
+
+    }
+    .text h5 {
+      font-size: 10px;
+
+    }
+  }
+  /* Reset and base styles  */
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+  * {
+    padding: 0px;
+    margin: 0px;
+
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  :focus,
+  :active {
+    /*outline: none;*/
+  }
+
+  a:focus,
+  a:active {
+    /* outline: none;*/
+  }
+
+  /* Links */
+  a, a:link, a:visited {
+    /* color: inherit; */
+    text-decoration: none;
+    /* display: inline-block; */
+  }
+
+  a:hover {
+    /* color: inherit; */
+    text-decoration: none;
+  }
+
+  /* Common */
+  aside, nav, footer, header, section, main {
+    display: block;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  ul, ul li {
+    list-style: none;
+  }
+
+  img {
+    vertical-align: top;
+  }
+
+  img, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Form */
+  .count__box a, textarea, button, select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+
+  }
+
+  .count__box a::-ms-clear {
+    display: none;
+  }
+
+  button, .count__box a[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+  }
+
+  .count__box a:focus, .count__box a:active,
+  button:focus, button:active {
+    outline: none;
+  }
+
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  legend {
+    display: block;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .container {
+    max-width: 1140px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-cart {
+    padding: 70px 0 90px;
+  }
+
+  .section-cart__header {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .title-1 {
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+  .empty{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .cart-header {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 3fr) 1fr;
+    column-gap: 30px;
+    padding: 22px 0;
+    background-color: #6D4CFB;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: 0.2em;
+    color: #FAFAFA;
+    text-transform: uppercase;
+  }
+  @media (max-width: 600px) {
+    .cart-header {
+      height: 1px;
+      padding: 0;
+    }
+    .cart-header > * {
+      display: none;
+    }
+  }
+
+  .cart-header__title {
+    grid-column-start: 2;
+  }
+
+  .cart-footer {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 3fr) 1fr;
+    column-gap: 30px;
+    padding: 19px 0;
+    background: #EAEFF2;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  @media (max-width: 600px) {
+    .cart-footer {
+      padding-left: 15px;
+      padding-right: 15px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 400px) {
+    .cart-footer {
+      grid-template-columns: 1fr;
+      row-gap: 10px;
+    }
+  }
+
+  .cart-footer__count {
+    grid-column-start: 3;
+  }
+  @media (max-width: 600px) {
+    .cart-footer__count {
+      grid-column-start: 1;
+    }
+  }
+
+  .product {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 3fr) 1fr;
+    column-gap: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(126, 155, 189, 0.3);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  @media (max-width: 600px) {
+    .product {
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: minmax(60px, auto);
+      column-gap: 15px;
+      row-gap: 10px;
+    }
+  }
+
+  .product > * {
+    align-self: center;
+  }
+
+  .product__img {
+    justify-self: center;
+  }
+  @media (max-width: 600px) {
+    .product__img {
+      grid-column: 1/3;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .product__title {
+      grid-column: 3/-1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .product__count {
+      grid-column: 1/3;
+      justify-self: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .product__price {
+      grid-column: 3/6;
+    }
+  }
+
+  .product__controls {
+    justify-self: center;
+  }
+
+  .count {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+  }
+
+
+
+
+
+
+
+  .count__controls i{
+    display: block;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  body{
+    height: 800px;
+    width: 100%;
+  }
+  .container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container .forms {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    align-items: center;
+    transition: height 0.2s ease;
+    display: flex;
+    left: 15%;
+
+  }
+
+  .container .form{
+    padding: 40px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    /*transition: margin-left 0.18s ease;*/
+  }
+
+  .container .signup{
+    opacity: 1;
+    transition: opacity 0.09s ease;
+  }
+  .container.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+
+  }
+  label{
+    background: #F5F4F7;
+  }
+  .container.active .forms{
+    height: 500px;
+  }
+  .container .form .title{
+    position: relative;
+    font-size: 27px;
+    font-width: 600;
+    color: #160B46;
+    font-weight: 600;
+  }
+  /*.form .title::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 30px;
+      background-color: dodgerblue;
+      border-radius: 25px;
+  }*/
+  .form .input-field{
+    margin-top: 30px;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    display: flex;
+
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 20px;
+
+  }
+  .form .input-field-count{
+    margin-top: 30px;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 20px;
+
+  }
+  .form .input-field-num{
+    margin-top: 30px;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 20px;
+
+  }
+  .input-field input{
+
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 30px;
+    border-radius: 10px;
+    outline: none;
+    border: black;
+    font-size: 16px;
+    border-bottom: 2px solid #F5F4F7;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+    background: #F5F4F7;
+  }
+  /*.input-field input:is(:focus, :valid){
+      border-bottom-color: dodgerblue;
+  }*/
+  .input-field i {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    color: #A8A4B0;
+    font-size: 23px;
+    transition: all 0.2s ease;
+
+  }
+  .input-field input:is(:focus, :valid) ~ i{
+    color: dodgerblue;
+  }
+  .input-field i.icon{
+    left: 15px;
+  }
+  .input-field i.uil-coins{
+    left: 15px;
+  }
+  .input-field i.showHidePw{
+    right: 15px;
+    cursor: pointer;
+
+  }
+
+
+  .form .button input{
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-width: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #41c253;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .form .button{
+    margin-top: 60px;
+  }
+
+  .button input:hover{
+    background-color: #33a443;
+  }
+  .form .login-signup{
+    margin-top: 30px;
+    text-align: center;
+  }
+  .form .text {
+    color: #A8A4B0;
+    font-size: 16px;
+  }
+
+
+  .form a.text{
+    text-decoration: none;
+    color: #051c01;
+    font-weight: 400;
+  }
+  .form a:hover{
+    text-decoration: underline;
+  }
+  .left_side{
+    display: flex;
+
+    height: 100vw;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .nc{
+    width: 100%;
+  }
+
+  /*# sourceMappingURL=main.css.map */
+  .input-field-num{
+    width: 45%;
+    position: absolute;
+
+
+    padding: 0 30px;
+    border-radius: 10px;
+    outline: none;
+    border: black;
+    font-size: 16px;
+    border-bottom: 2px solid #F5F4F7;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+    background: #F5F4F7;
+  }
+  .input-field-count{
+    width: 45%;
+    position: absolute;
+
+
+    padding: 0 30px;
+    border-radius: 10px;
+    outline: none;
+    border: black;
+    font-size: 16px;
+    border-bottom: 2px solid #F5F4F7;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+    background: #F5F4F7;
+  }
+
+  /* Product card */
+</style>
+<body>
+
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" th:href="@{/}">MyAppleStore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-between"  id="navbarSupportedContent">
+        <ul class="navbar-nav   me-auto mb-2 mb-lg-0 top-menu">
+          <li class="nav-item">
+            <a class="nav-link"  th:href="@{/addProduct}">Добавить товар</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/products}">Мои товары</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Заказы</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+
+
+
+          <li class="nav-item">
+            <a  class="nav-link" data-bs-toggle="dropdown" href="/logout">Выйти</a>
+
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="container">
+
+    <div class="forms">
+      <div class="form signup">
+
+        <form  action="/addProduct" method="post" enctype="multipart/form-data">
+          <div class="input-field">
+            <label> <input type="text" name="name" placeholder="Название товара" /> </label>
+
+          </div>
+          <div class="input-field">
+            <label><input type="text" name="description" placeholder="Описание товара" /></label>
+
+          </div>
+          <div class="d-flex-justify-content-between nc">
+            <div class="input-field d-flex-row">
+              <label><input type="text" class="price" name="price" placeholder="Цена" /></label>
+
+            </div>
+
+            <div class="input-field d-flex-row">
+              <label><input type="text" class="count" name="count" placeholder="Количество"/></label>
+            </div>
+          </div>
+          </br>
+          </br>
+          <div>Первая фотография: <input type="file" name="file1"></div></br>
+          <div>Вторая фотография: <input type="file" name="file2"></div></br>
+          <div>Третья фотография: <input type="file" name="file3"></div>
+
+          <div class="input-field button">
+            <input type="submit" value="Добавить товар" />
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <link rel="icon" href="https://sun9-54.userapi.com/impg/N-flFK2CgXAnNgYfYjjdEb84BPverUDjMeR63g/LcXBQmPkH3Y.jpg?size=428x147&quality=96&sign=1c13896aa0680bd6a5983986d6e8ee9d&type=album" type="image/x-icon" >
+  <link rel="shortcut icon" href="http://www.sitename.com/dirname/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>1</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<style>
+  img{
+    width: 428px;
+    height: 147px;
+    margin-top: 176px;
+  }
+  html {
+    font-size: 18px;
+  }
+  .header{
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    z-index: 100;
+    -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+
+  }
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #160B46;
+    min-width: 320px;
+  }
+  main{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 100px;
+    height: 800px;
+
+  }
+
+  .seller-link{
+    width: 300px;
+    margin-top: 20px;
+  }
+  section {
+    padding: 50px 0;
+  }
+
+  a {
+    color: #160B46;
+  }
+
+  a:hover {
+    color: #6D4CFB;
+
+  }
+
+  /* Header */
+  .navbar-light .navbar-nav .nav-link {
+    font-size: 14px;
+    color:#160B46;
+    font-weight: 500;
+    padding-left: 50px;
+  }
+  .navbar-light .navbar-nav .nav-link:hover{
+    color:#6D4CFB;
+
+  }
+
+  .navbar-nav . {
+    right: 0;
+    left: auto;
+    padding-left: 20px;
+  }
+
+  .top-menu li a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #6D4CFB;
+    color: #6D4CFB;
+    height: 1px;
+    transition: all .3s;
+    transform: scale(0);
+  }
+
+  .top-menu li a:hover::after {
+    transform: scale(1);
+  }
+  a:hover{
+    color: #6D4CFB;
+  }
+  .top-menu li a{
+    color: red;
+  }
+  .modal-body img {
+    max-width: 100px;
+  }
+  /* Header */
+
+  /* Carousel */
+
+
+
+
+  .my-carousel .carousel-item img {
+    object-fit: cover;
+  }
+  /* Carousel */
+
+  /* Product card */
+
+  .article {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    justify-content: center;
+  }
+
+
+  .product-thumb a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    padding: 20px;
+  }
+
+  .product-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+
+
+  .product-details h4 a {
+    font-weight: 500;
+    display: block;
+    height: 60px;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  .text p {
+    font-size: 46px;
+    padding-top: 24%;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+  }
+  .catalog-link:hover{
+    background-color: #5C62EC;
+  }
+  .product-details p {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #6D4CFB;
+    height: 44px;
+    overflow: hidden;
+  }
+
+
+  .product-price small {
+    color: #160B46;
+    font-weight: 400;
+    text-decoration: line-through;
+    margin-right: 5px;
+  }
+
+  .product-links a {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  h2{
+    padding-left: 100px;
+    padding-top: 60px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #160B46;
+
+
+  }
+  img{
+    height: 500px;
+    width: auto;
+    padding-left: 50px;
+  }
+  .navbar-brand img{
+    height: 30px;
+
+  }
+  .carousel-caption h5{
+    font-size: 16px;
+
+    letter-spacing: 2px;
+    margin-top: 25px;
+    font-weight: 500;
+
+  }
+  .carousel-caption p {
+    width: 80%;
+    margin: auto;
+    font-size: 30px;
+    line-height: 1.9;
+    font-weight: bold;
+  }
+
+  section{
+    padding: 20px 0;
+  }
+  h4{
+    font-size: 15px;
+    color: #160B46;
+  }
+
+  .navbar-brand{
+    color: #6D4CFB;
+  }
+
+  .text{
+    position: relative;
+    top: 5%;
+    width: 50%;
+
+  }
+  .navbar{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+  .header{
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  .text {
+    text-align: center;
+  }
+  form{
+    padding-top: 20px;
+  }
+  button {
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #6D4CFB;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 200px;
+    height: 40px;
+
+  }
+  em {
+    font-style: normal;
+    color: #6D4CFB;
+  }
+  .text-partner h5{
+    margin-top: 15px;
+  }
+  .partner{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0dfe3;
+    height: 100%;
+    padding: 4% 0;
+
+
+  }
+  .text-partner{
+    position: relative;
+    top: 30%;
+    padding: 0 30%;
+
+  }
+
+  .block{
+    height: 150px;
+  }
+  @media (min-width: 1200px) and (max-width: 1300px) {
+    .text p {
+      font-size: 40px;
+
+    }
+
+  }
+  @media (min-width: 1050px) and (max-width: 1200px) {
+    .text p {
+      font-size: 32px;
+
+    }
+    .text h5 {
+      font-size: 12px;
+
+    }
+  }
+  @media (min-width: 800px) and (max-width: 1050px) {
+    .text p {
+      font-size: 24px;
+
+    }
+    .text h5 {
+      font-size: 10px;
+
+    }
+  }
+
+  /* Product card */
+</style>
+<body>
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" th:href="@{/}">MyAppleStore</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-between"  id="navbarSupportedContent">
+        <ul class="navbar-nav   me-auto mb-2 mb-lg-0 top-menu">
+          <li class="nav-item">
+            <a class="nav-link"  th:href="@{/addProduct}">Добавить товар</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/products}">Мои товары</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Заказы</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+
+
+
+          <li class="nav-item">
+            <a  class="nav-link" data-bs-toggle="dropdown" href="/logout">Выйти</a>
+
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <article class="article d-flex">
+    <div class="image d-flex-column">
+      <img src="https://psv4.userapi.com/c235031/u229204806/docs/d36/4fd13a8d0b8c/In_no_time-pana.png?extra=wtWsRxHO9t1JmFdnKpXf1hurNCUX8Hwp_u7XMcF0DItjvvM8ypVbl6Aet4a-euWRDlqDgdD6EW2xRVSCOwqtYpx6tI1YndkDho2ScXZrbJoLnrJ4gNxoKPntRkggIlwmbMs7tU7g_TXFcO8RAqP2tQYLifM">
+    </div>
+    <div class="text d-flex-column">
+      <p><em>Apple</em> Marketplace</p>
+      <h5>Начни зарабатывать прямо сейчас!</h5>
+      <form action="/addProduct">
+        <button class="text catalog-link">Добавь товары</button>
+      </form>
+    </div>
+  </article>
+
+
+</main>
+<article class="partner">
+
+  <div class="text-partner">
+    <h5>Стать партнером</h5>
+    <p>Развивайте бизнес и получайте новых клиентов вместе с MyAppleStore - это бесплатно. Пройдите регистрацию, добавьте товары и начните зарабатывать прямо сейчас.</p>
+    <form action="#">
+    </form>
+  </div>
+</article>
+
+<div class="block">
+
+</div>
+
+
+
+
+
+</script>
+</body>
+</html>

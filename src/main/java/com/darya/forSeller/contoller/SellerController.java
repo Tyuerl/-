@@ -37,9 +37,22 @@ public class SellerController {
         this.imageRepository = imageRepository;
         this.basketRepository = basketRepository;
     }
+    @GetMapping("/hello")
+    public String index(){
+        return "hello";
+    }
 
-    @GetMapping("/")
-    public String showInfo(Model model){
+    ;    @GetMapping("/")
+    public String showInfo(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        SellerDetails clientDetails = (SellerDetails) authentication.getPrincipal();
+        System.out.println(clientDetails.getSeller().getDescription());
+
+        return "hello";
+    }
+    @GetMapping("/products")
+    public String showProducts(Model model){
         Seller seller = sellerRepository.findById(getCurrentSeller().getId()).get();
         model.addAttribute("seller", seller);
 
@@ -68,7 +81,7 @@ public class SellerController {
         }
 
         productService.save(product, getCurrentSeller(), file1, file2, file3);
-        return "redirect:/";
+        return "redirect:/products";
     }
 
     @GetMapping("/product/{id}")
